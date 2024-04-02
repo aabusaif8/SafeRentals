@@ -5,7 +5,10 @@ import { motion } from "framer-motion"
 const Home = () => {
   return (
     <motion.div className="home container"
-    animate = {{marginTop:200, rotateZ:360}}>
+    initial = {{opacity:0}}
+    animate = {{marginTop:200, opacity:1}}
+    transition ={{delay: .5}}
+    >
       <motion.h2 
       animate = {{fontSize: 50, color:'#ff2994'}}>
         Welcome to Safe Rentals!
