@@ -2,39 +2,39 @@ import React, { useState } from 'react';
 import { Route, Switch } from "react-router-dom";
 import Header from './components/Header';
 import Home from './components/Home';
-import Base from './components/Base';
-import Toppings from './components/Toppings';
+import Areas from './components/Areas';
+import Rooms from './components/Rooms';
 import Order from './components/Order';
 
 function App() {
-  const [pizza, setPizza] = useState({ base: "", toppings: [] });
+  const [rental, setRental] = useState({ area: "", rooms: [] });
 
-  const addBase = (base) => {
-    setPizza({ ...pizza, base })
+  const addArea = (area) => {
+    setRental({ ...rental, area })
   }
   
-  const addTopping = (topping) => {
-    let newToppings;
-    if(!pizza.toppings.includes(topping)){
-      newToppings = [...pizza.toppings, topping];
+  const addRoom = (room) => {
+    let newRoom;
+    if (!rental.rooms.includes(room)) {
+      newRoom = [...rental.rooms, room];
     } else {
-      newToppings = pizza.toppings.filter(item => item !== topping);
+      newRoom = rental.rooms.filter(item => item !== room);
     }
-    setPizza({ ...pizza, toppings: newToppings });
+    setRental({ ...rental, rooms: newRoom });
   }
 
   return (
     <>
       <Header />
       <Switch>
-        <Route path="/base">
-          <Base addBase={addBase} pizza={pizza} />
+        <Route path="/areas">
+          <Areas addArea={addArea} rental={rental} />
         </Route>
-        <Route path="/toppings">
-          <Toppings addTopping={addTopping} pizza={pizza} />
+        <Route path="/rooms">
+          <Rooms addRoom={addRoom} rental={rental} />
         </Route>
         <Route path="/order">
-          <Order pizza={pizza} />
+          <Order rental={rental} />
         </Route>
         <Route path="/">
           <Home />
