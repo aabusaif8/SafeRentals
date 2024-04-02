@@ -10,7 +10,7 @@ const Home = () => {
     transition ={{delay: .5}}
     >
       <motion.h2 
-      animate = {{fontSize: 50, color:'#ff2994'}}>
+      animate = {{fontSize: 50}}>
         Welcome to Safe Rentals!
       </motion.h2>
       <div>
