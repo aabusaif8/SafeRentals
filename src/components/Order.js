@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Order = ({ rental }) => {
   return (
@@ -12,6 +13,9 @@ const Order = ({ rental }) => {
           <li key={room}>{room}</li>
         ))}
       </ul>
+      <Link to="/">
+        <button>Go Back to Home</button>
+      </Link>
     </div>
   );
 };
