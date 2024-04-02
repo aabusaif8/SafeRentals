@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import {motion} from 'framer-motion'
 const Areas = ({ addArea, rental }) => {
   const areas = ['Sulphur, La', 'Houston, Tx', 'Boston, Ma'];
 
@@ -22,7 +22,11 @@ const Areas = ({ addArea, rental }) => {
       {rental.area && (
         <div className="next">
           <Link to="/rooms">
-            <button>Next</button>
+            <motion.button
+            initial={{x:'-50px'}}
+            animate = {{x:'0px'}}>
+              Next
+              </motion.button>
           </Link>
         </div>
       )}

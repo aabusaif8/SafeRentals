@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Order = ({ rental }) => {
   return (
@@ -14,7 +15,11 @@ const Order = ({ rental }) => {
         ))}
       </ul>
       <Link to="/">
-        <button>Go Back to Home</button>
+        <motion.button
+        initial={{x:'-50px', opacity:0}}
+        animate = {{x:'0px', opacity:1}}
+        transition={{delay:.5}}
+        >Go Back to Home</motion.button>
       </Link>
     </div>
   );
